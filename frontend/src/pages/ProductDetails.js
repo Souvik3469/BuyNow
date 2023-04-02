@@ -11,6 +11,12 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [cart,setCart]=useState([]);
+  // const[qty,setQty]=useState([]);
+
+  // const incq=()=>{
+  //   const q=qty+1;
+  //   setQty(q);
+  // }
 
   //initalp details
   useEffect(() => {
@@ -66,14 +72,15 @@ const ProductDetails = () => {
           <h6>Category : {product?.category?.name}</h6>
           
           <button class="btn btn-secondary ms-1" 
-          //  onClick={() => {
-          //           setCart([...cart, product._id]);
-          //           localStorage.setItem(
-          //             "cart",
-          //             JSON.stringify([...cart, product._id])
-          //           );
-          //           toast.success("Item Added to cart");
-          //         }}
+           onClick={() => {
+                    setCart([...cart, product]);
+                    localStorage.setItem(
+                      "cart",
+                      JSON.stringify([...cart, product])
+                    );
+                    toast.success("Item Added to cart");
+                  }}
+          // onClick={incq}
           >ADD TO CART</button>
           
         </div>
