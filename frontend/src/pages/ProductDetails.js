@@ -4,13 +4,14 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
+import { useCart } from "../context/cart";
 
 const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [cart,setCart]=useState([]);
+  const [cart,setCart]=useCart();
   // const[qty,setQty]=useState([]);
 
   // const incq=()=>{
@@ -30,6 +31,7 @@ const ProductDetails = () => {
       );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category._id);
+      //push(data?.product);
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +47,30 @@ const ProductDetails = () => {
       console.log(error);
     }
   };
+   console.log(product);
+  //  const push=async(p)=>{
+  //   //  try {
+  //   //   const { data } = await axios.get(
+  //   //     `/api/v1/product/get-product/${params.slug}`
+  //   //   );
+  //   //  // setProduct(data?.product);
+  //   //     setCart([...cart, data?.product]);
+  //   //                 // localStorage.setItem(
+  //   //                 //   "cart",
+  //   //                 //   JSON.stringify([...cart, product])
+  //   //                 // );
+  //   //                  toast.success("Item Added to cart");
+  //   //   //getSimilarProduct(data?.product._id, data?.product.category._id);
+  //   // } catch (error) {
+  //   //   console.log(error);
+  //   // }
+  //    setCart([...cart, p]);
+  //                   localStorage.setItem(
+  //                     "cart",
+  //                     JSON.stringify([...cart, p])
+  //                   );
+  //                   toast.success("Item Added to cart");
+  //   }
   return (
     <Layout>
       <div className="row container product-details">
@@ -57,6 +83,7 @@ const ProductDetails = () => {
             width={"350px"}
           />
         </div>
+        
         <div className="col-md-6 product-details-info">
           <h1 className="text-center">Product Details</h1>
           <hr />
@@ -70,7 +97,7 @@ const ProductDetails = () => {
             })}
           </h6>
           <h6>Category : {product?.category?.name}</h6>
-          
+         
           <button class="btn btn-secondary ms-1" 
            onClick={() => {
                     setCart([...cart, product]);
