@@ -1,50 +1,95 @@
 .product-details {
-  margin-top: 100px !important;
+  margin-top: 100px;
+  margin-left: 50px;
 }
 
 .product-details-info {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .product-details-info h6 {
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.similar-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+    margin-top: 100px;
+      margin-left: 50px;
 }
 
 .similar-products .card {
-  background-color: rgba(128, 128, 128, 0.097);
-  width: 18rem;
+  margin-left: 50px;
+  background-color: rgba(128, 128, 128, 0.1);
+  width: 100%;
+  max-width: 18rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.similar-products .card:hover {
+  transform: scale(1.05);
+}
+
+.similar-products .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.similar-products .card-body {
+  padding: 20px;
 }
 
 .similar-products .card-name-price {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.similar-products .card-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
 }
 
 .similar-products .card-price {
   color: green;
   font-weight: bold;
 }
+
 .similar-products button {
-  border-radius: 0;
+  border: none;
+  border-radius: 5px;
   width: 100%;
-  border-top-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
   font-size: 14px;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.similar-products button:hover {
+  background-color: #45a049;
 }
 
 .similar-products .card-text {
-  color: rgb(90, 89, 89);
+  color: #555;
 }
 
-.similar-products .card img:hover {
-  transform: scale(0.9);
-}
-
-.similar-products .card-img-top {
-  height: 300px !important;
+.similar-products img {
+  transition: transform 0.3s;
 }

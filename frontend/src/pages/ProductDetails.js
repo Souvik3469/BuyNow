@@ -143,11 +143,13 @@ const ProductDetails = () => {
                   <button
                     className="btn btn-info ms-1"
                     onClick={() => navigate(`/product/${p.slug}`)}
+                      style={{color:"white"}}
                   >
                     More Details
                   </button>
                   <button
                   className="btn btn-dark ms-1"
+                  style={{color:"white"}}
                   onClick={() => {
                     setCart([...cart, p]);
                     localStorage.setItem(

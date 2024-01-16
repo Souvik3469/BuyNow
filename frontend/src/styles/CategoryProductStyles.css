@@ -5,6 +5,10 @@
 .category .card {
   background-color: rgba(128, 128, 128, 0.097);
   width: 18rem;
+  transition: transform 0.3s ease-in-out;
+}
+.category .card:hover {
+  transform: scale(1.03);
 }
 .category .card-name-price {
   display: flex;
@@ -29,9 +33,9 @@
   color: rgb(90, 89, 89);
 }
 
-.category .card img:hover {
+/* .category .card img:hover {
   transform: scale(0.9);
-}
+} */
 
 .category .card-img-top {
   height: 300px !important;

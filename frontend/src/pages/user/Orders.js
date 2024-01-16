@@ -62,7 +62,7 @@ const Orders = () => {
                             src={`/api/v1/product/product-photo/${p._id}`}
                             className="card-img-top"
                             alt={p.name}
-                            width="100px"
+                            width={"100px"}
                             height={"100px"}
                           />
                         </div>
