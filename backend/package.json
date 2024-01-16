@@ -1,5 +1,5 @@
 {
-  "name": "buynow",
+  "name": "buynow-backend",
   "version": "1.0.0",
   "description": "Ecommerce",
   "main": "server.js",

@@ -20,6 +20,7 @@ const CartPage = () => {
   //total price
   const totalPrice = () => {
     try {
+      console.log(cart);
       let total = 0;
       cart?.map((item) => {
         total = total + item.price;

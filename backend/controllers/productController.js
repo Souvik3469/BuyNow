@@ -6,6 +6,7 @@ import fs from "fs";
 import slugify from "slugify";
 import braintree from "braintree";
 import dotenv from "dotenv";
+import { log } from "console";
 
 dotenv.config();
 
@@ -56,7 +57,7 @@ export const createProductController = async (req, res) => {
     res.status(500).send({
       success: false,
       error,
-      message: "Error in crearing product",
+      message: "Error in creating product",
     });
   }
 };
@@ -347,6 +348,7 @@ export const braintreeTokenController = async (req, res) => {
 export const brainTreePaymentController = async (req, res) => {
   try {
     const { nonce, cart } = req.body;
+    console.log(cart);
     let total = 0;
     cart.map((i) => {
       total += i.price;

@@ -22,7 +22,7 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <nav className="navbar navbar-expand-lg  fixed-top">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -36,13 +36,13 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
+            <Link to="/" className="navbar-brand"style={{color:"white"}}>
               🛒 BuyNow
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />
               <li className="nav-item">
-                <NavLink to="/" className="nav-link ">
+                <NavLink to="/" className="nav-link "style={{color:"white"}}>
                   Home
                 </NavLink>
               </li>
@@ -51,12 +51,13 @@ const Header = () => {
                   className="nav-link dropdown-toggle"
                   to={"/categories"}
                   data-bs-toggle="dropdown"
+                  style={{color:"white"}}
                 >
                   Categories
                 </Link>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu"style={{backgroundColor:'black'}}>
                   <li>
-                    <Link className="dropdown-item" to={"/categories"}>
+                    <Link className="dropdown-item" to={"/categories"} style={{color:"aqua"}}>
                       All Categories
                     </Link>
                   </li>
@@ -65,6 +66,7 @@ const Header = () => {
                       <Link
                         className="dropdown-item"
                         to={`/category/${c.slug}`}
+                        style={{color:"aqua"}}
                       >
                         {c.name}
                       </Link>
@@ -75,36 +77,37 @@ const Header = () => {
 
               {!auth?.user ? (
                 <>
-                  <li className="nav-item">
-                    <NavLink to="/register" className="nav-link">
+                  <li className="nav-item" style={{backgroundColor:'black'}}>
+                    <NavLink to="/register" className="nav-link" style={{color:"white"}}>
                       Register
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to="/login" className="nav-link">
+                    <NavLink to="/login" className="nav-link" style={{color:"white"}}>
                       Login
                     </NavLink>
                   </li>
                 </>
               ) : (
                 <>
-                  <li className="nav-item dropdown">
+                  <li className="nav-item dropdown" >
                     <NavLink
                       className="nav-link dropdown-toggle"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
-                      style={{ border: "none" }}
+                      style={{ border: "none" ,color:"white"}}
                     >
                       {auth?.user?.name}
                     </NavLink>
-                    <ul className="dropdown-menu">
+                    <ul className="dropdown-menu"style={{backgroundColor:'black'}}>
                       <li>
                         <NavLink
                           to={`/dashboard/${
                             auth?.user?.role === 1 ? "admin" : "user"
                           }`}
                           className="dropdown-item"
+                          style={{color:"aqua"}}
                         >
                           Dashboard
                         </NavLink>
@@ -114,6 +117,7 @@ const Header = () => {
                           onClick={handleLogout}
                           to="/login"
                           className="dropdown-item"
+                            style={{color:"aqua"}}
                         >
                           Logout
                         </NavLink>
@@ -122,10 +126,11 @@ const Header = () => {
                   </li>
                 </>
               )}
-              <li className="nav-item">
-                <NavLink to="/cart" className="nav-link">
+              <li className="nav-item"style={{color:"white"}}>
+                <NavLink to="/cart" className="nav-link" style={{color:"white"}}>
                   <Badge count={cart?.length} showZero offset={[10, -5]}>
-                    Cart
+                    <span className="x" style={{color:"white",fontSize:"18px"}}> Cart</span>
+                   
                   </Badge>
                 </NavLink>
               </li>
