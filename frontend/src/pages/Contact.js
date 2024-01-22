@@ -9,14 +9,14 @@ const Contact = () => {
           <img
             src="/images/contactus.jpeg"
             alt="contactus"
-            style={{ width: "100%" }}
+            style={{ width: "85%", }}
           />
         </div>
         <div className="col-md-4">
           <h1 className="bg-dark p-2 text-white text-center">CONTACT US</h1>
           <p className="text-justify mt-2">
-            any query and info about product feel free to call anytime we 24X7
-            vaialible
+            Any query and info about our products, feel free to call anytime we are available 24X7
+            
           </p>
           <p className="mt-3">
             <BiMailSend /> : www.help@buynow.com

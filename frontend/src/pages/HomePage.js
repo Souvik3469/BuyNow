@@ -117,7 +117,12 @@ const HomePage = () => {
       />
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
-        <div className="col-md-3 filters">
+        <div className="col-md-3 filters"style={{
+
+          height: "550px",
+          position: "sticky",
+          top: 50, 
+          }}>
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
             {categories?.map((c) => (
