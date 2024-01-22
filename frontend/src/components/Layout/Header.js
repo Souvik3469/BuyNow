@@ -107,7 +107,7 @@ const Header = () => {
                             auth?.user?.role === 1 ? "admin" : "user"
                           }`}
                           className="dropdown-item"
-                          style={{color:"aqua"}}
+                          style={{color:"aqua",backgroundColor:'black'}}
                         >
                           Dashboard
                         </NavLink>

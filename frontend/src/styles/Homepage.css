@@ -19,6 +19,7 @@
   background-color: rgba(128, 128, 128, 0.097);
   width: 18rem;
   transition: transform 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .home-page .card:hover {
   transform: scale(1.03);
@@ -56,10 +57,18 @@
 /* ==================
 filters
 ============== */
+.filters{
+margin-left: 0px;
+justify-content: center;
+align-items: center;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .filters h4 {
+  
   margin-top: 100px;
   color: gray !important;
   border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+  
 }
 
 .ant-checkbox-wrapper:first-of-type {
@@ -68,18 +77,22 @@ filters
 
 .ant-checkbox-wrapper {
   margin: 2px;
+  font-size: medium;
 }
 .ant-radio-wrapper {
   margin-bottom: 5px !important;
   margin-left: 10px;
+  font-size: medium;
 }
 
 .filters button {
+  /* font-size: x-large; */
   background-color: black;
   width: 100%;
   border: none;
   border-radius: 0;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .loadmore {
