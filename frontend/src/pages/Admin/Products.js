@@ -11,6 +11,7 @@ const Products = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get("/api/v1/product/get-product");
+      console.log("Products1",data.products)
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -21,6 +22,7 @@ const Products = () => {
   //lifecycle method
   useEffect(() => {
     getAllProducts();
+    console.log(("Products",products));
   }, []);
   return (
     <Layout>
