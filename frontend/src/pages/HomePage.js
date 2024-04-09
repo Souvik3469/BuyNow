@@ -42,6 +42,7 @@ const HomePage = () => {
       setLoading(true);
       const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
       setLoading(false);
+      console.log("Products4",data.products)
       setProducts(data.products);
     } catch (error) {
       setLoading(false);
@@ -101,6 +102,7 @@ const HomePage = () => {
         checked,
         radio,
       });
+      console.log("products3",data?.products);
       setProducts(data?.products);
     } catch (error) {
       console.log(error);
